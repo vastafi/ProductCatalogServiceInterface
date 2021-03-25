@@ -1,23 +1,17 @@
 <?php
 
 namespace Module\ProductModule;
-require_once ('Domain/Product.php');
-require_once ('Application/ProductCatalogServiceInterface.php');
-use ArrayObject;
-/*
-require_once ('Domain/Product.php');
-require_once ('Application/ProductCatalogServiceInterface.php');
+namespace Module\ProductModule\Domain\Product;
+namespace Module\ProductModule\Application\ProductCatalgServiceInterface;
+
 use ArrayObject;
 
-class ProductRepository implements extends  ProductCatalogServiceInterface {
+/*class ProductRepository implements extends  ProductCatalogServiceInterface {
     public function getProductByCode(string $productCode){
        print_r ("+ The product selected by code is:" $this->fileInformation);
-    }
-
-
-  */  
-  namespace Module\ProcuctModule;
-
+    }*/
+   
+  
 class ProductRepository implements  ProductCatalogServiceInterface{
 
     public function getProductByCode(string $productCode){
