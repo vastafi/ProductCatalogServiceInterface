@@ -1,17 +1,50 @@
 <?php
 
-namespace Module\ProductModule;
-namespace Module\ProductModule\Domain\Product;
-namespace Module\ProductModule\Application\ProductCatalgServiceInterface;
+namespace Module\ProductModule\Infrastructure\Repository;
 
-use ArrayObject;
+use Module\ProductModule\Aplication\ProductCatalogServiceInterface;
+use Module\ProductModule\Aplication\ProductCollection;
+use Module\ProductModule\Domain\Product;
+use Module\ProductModule\Domain\ProductSearchCriteria;
+
+class ProductRepository implements ProductCatalogServiceInterface {
+
+    public function getProductByCode(string $productCode): Product
+    {
+        // TODO: Implement getProductByCode() method.
+    }
+
+    public function searchProduct(ProductSearchCriteria $criteria): ProductCollection
+    {
+        // TODO: Implement searchProduct() method.
+    }
+
+    public function createProduct(Product $product): bool
+    {
+        // TODO: Implement createProduct() method.
+    }
+
+    public function updateProduct(Product $product): bool
+    {
+        // TODO: Implement updateProduct() method.
+    }
+
+    public function deleteProductByCode(string $productCode): bool
+    {
+        // TODO: Implement deleteProductByCode() method.
+    }
+
+
+}
+
+//use ArrayObject;
 
 /*class ProductRepository implements extends  ProductCatalogServiceInterface {
     public function getProductByCode(string $productCode){
        print_r ("+ The product selected by code is:" $this->fileInformation);
     }*/
    
-  
+ /*
 class ProductRepository implements  ProductCatalogServiceInterface{
 
     public function getProductByCode(string $productCode){
@@ -34,4 +67,4 @@ class ProductRepository implements  ProductCatalogServiceInterface{
         echo "Delete product by code:".$productCode ."/n";
     }
 }
-?>
+*/

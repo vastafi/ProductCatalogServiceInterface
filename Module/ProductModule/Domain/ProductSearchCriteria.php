@@ -1,18 +1,30 @@
 <?php
 
-class SearchCriteria
+namespace Module\ProductModule\Domain;
+
+class ProductSearchCriteria
 {
-    private int $page;
-    private int $limit;
     private string $name;
     private string $category;
+    private int $page;
+    private int $limit;
 
-public function __construct($page = "" , $limit = "", $name = '', $category = '')
+    public function _construct($name = '', $category = '' ,$page = '', $limit = '')
     {
-        $this->page = $page;
-        $this->limit = $limit;
         $this->name = $name;
         $this->category = $category;
+        $this->page = $page;
+        $this->limit = $limit;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getCategory(): string
+    {
+        return $this->category;
     }
 
     public function getPage()
@@ -20,42 +32,29 @@ public function __construct($page = "" , $limit = "", $name = '', $category = ''
         return $this->page;
     }
 
-    public function setPage($page)
-    {
-        $this->page = $page;
-    }
-
-    public function getLimit()
+    public function getLimit(): int
     {
         return $this->limit;
     }
 
-    public function setLimit($limit)
-    {
-        $this->limit = $limit;
-    }
-
-    
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-        public function getCategory()
-    {
-        return $this->category;
-    }
-
-        public function setCategory($category)
+    public function setCategory(string $category): void
     {
         $this->category = $category;
     }
 
+    public function setPage(int $page): void
+    {
+        $this->page = $page;
+    }
+
+    public function setLimit(int $limit): void
+    {
+        $this->limit = $limit;
+    }
 
 }
-?>
