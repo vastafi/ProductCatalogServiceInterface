@@ -4,7 +4,7 @@ namespace Module\ProductModule\Aplication;
 
 use Module\ProductModule\Domain\Product;
 use Module\ProductModule\Domain\ProductSearchCriteria;
-use Module\ProductModule\Domain\ProductProductCollection;
+use Module\ProductModule\Domain\ProductCollection;
 
 interface ProductCatalogServiceInterface {
 

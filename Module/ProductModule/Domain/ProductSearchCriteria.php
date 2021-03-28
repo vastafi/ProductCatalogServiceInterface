@@ -2,6 +2,10 @@
 
 namespace Module\ProductModule\Domain;
 
+use Module\ProductModule\Exception\SearchCriteriaInvalidLimitException;
+use Module\ProductModule\Exception\SearchCriteriaInvalidPageNumberException;
+
+
 class ProductSearchCriteria
 {
     private string $name;
@@ -9,8 +13,15 @@ class ProductSearchCriteria
     private int $page;
     private int $limit;
 
-    public function _construct($name = '', $category = '' ,$page = '', $limit = '')
+    public function __construct($name = '', $category = '' ,$page = 1, $limit = 8 )
     {
+        if($page <= 0){
+            throw new SearchCriteriaInvalidPageNumberException();
+        }
+        if($limit <= 0){
+            throw new SearchCriteriaInvalidLimitException();
+        }
+
         $this->name = $name;
         $this->category = $category;
         $this->page = $page;
@@ -27,7 +38,7 @@ class ProductSearchCriteria
         return $this->category;
     }
 
-    public function getPage()
+    public function getPage(): int
     {
         return $this->page;
     }

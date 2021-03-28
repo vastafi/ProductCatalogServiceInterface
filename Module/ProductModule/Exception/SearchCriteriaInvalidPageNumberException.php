@@ -1,3 +1,8 @@
 <?php
 
-namespace Module\ModuleProduct\Exception;
+namespace Module\ProductModule\Exception;
+use DomainException;
+
+class SearchCriteriaInvalidPageNumberException extends DomainException {
+
+}

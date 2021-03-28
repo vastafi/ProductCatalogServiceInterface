@@ -2,7 +2,9 @@
 
 namespace Module\ProductModule\Domain;
 
-class Product {
+use JsonSerializable;
+
+class Product implements JsonSerializable {
     private string $name;
     private string $code;
     private float $price;
@@ -13,6 +15,16 @@ class Product {
         $this->code = $code;
         $this->price = $price;
         $this->category = $category;
+    }
+
+    public function jsonSerialize (): array
+    {
+        return [
+            'name' => $this->name,
+            'code' => $this->code,
+            'price' => $this->price,
+            'category' => $this->category
+        ];
     }
 
     public function getName(): string
@@ -53,6 +65,11 @@ class Product {
     public function setCategory(string $category): void
     {
         $this->category = $category;
+    }
+
+    public static function fromArray(array $data): self
+    {
+        return new self($data['name'], $data['code'], $data['category'], $data['price']);
     }
 }
 
